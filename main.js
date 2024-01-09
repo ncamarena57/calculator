@@ -61,8 +61,13 @@ function calculate() {
         }
         previousNum = previousNum / currentNum;
     }
+    previousNum = roundNumber(previousNum);
     previousNum = previousNum.toString();
     displayResults();
+}
+
+function roundNumber(num) {
+    return Math.round(num * 100000) / 100000;
 }
 
 function displayResults() {
