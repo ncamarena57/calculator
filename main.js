@@ -54,8 +54,23 @@ function calculate() {
     } else if (operator === "x") {
         previousNum = previousNum * currentNum;
     } else if (operator === "/") {
+        if (currentNum <= 0) {
+            previousNum = "Error";
+            displayResults();
+            return;
+        }
         previousNum = previousNum / currentNum;
     }
+    previousNum = previousNum.toString();
+    displayResults();
+}
+
+function displayResults() {
     previousDisplayNumber.textContent = "";
-    currentDisplayNumber.textContent = previousNum;
+    operator = "";
+    if (previousNum.length <= 11) {
+        currentDisplayNumber.textContent = previousNum;
+    } else {
+        currentDisplayNumber.textContent = previousNum.slice(0, 11) + "...";
+    }
 }
