@@ -15,6 +15,7 @@ equal.addEventListener("click", () => {
 const decimal = document.querySelector('.decimal');
 
 const clear = document.querySelector('.clear');
+clear.addEventListener("click", clearCalculator);
 
 const numberButtons = document.querySelectorAll('.number');
 
@@ -84,4 +85,10 @@ function displayResults() {
     }
 }
 
-
+function clearCalculator() {
+    currentNum = "";
+    previousNum = "";
+    operator = "";
+    currentDisplayNumber.textContent = "0";
+    previousDisplayNumber.textContent = "";
+}
