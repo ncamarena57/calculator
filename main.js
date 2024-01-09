@@ -6,7 +6,11 @@ const currentDisplayNumber = document.querySelector('.currentNumber');
 const previousDisplayNumber = document.querySelector('.previousNumber');
 
 const equal = document.querySelector('.equal');
-equal.addEventListener("click", calculate);
+equal.addEventListener("click", () => {
+    if(currentNum != "" && previousNum != "") {
+        calculate();
+    }
+});
 
 const decimal = document.querySelector('.decimal');
 
@@ -79,3 +83,5 @@ function displayResults() {
         currentDisplayNumber.textContent = previousNum.slice(0, 11) + "...";
     }
 }
+
+
