@@ -20,6 +20,7 @@ let operand1 = 0;
 let operand2 = 0;
 let operator = "";
 
+// Operate Function
 function operate(operator, num1, num2) {
     switch (operator) {
         case "+":
@@ -36,3 +37,4 @@ function operate(operator, num1, num2) {
             break;
     }
 }
+
