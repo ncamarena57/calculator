@@ -15,7 +15,9 @@ function divide(x, y) {
     return x / y;
 }
 
-// Numerands and Operators
-let numerand1 = 0;
-let numerand2 = 0;
+// Operands and Operators
+let operand1 = 0;
+let operand2 = 0;
 let operator = "";
+
+
