@@ -5,6 +5,8 @@ let operator = "";
 const currentDisplayNumber = document.querySelector('.currentNumber');
 const previousDisplayNumber = document.querySelector('.previousNumber');
 
+window.addEventListener('keydown', handleKeyPress);
+
 const equal = document.querySelector('.equal');
 equal.addEventListener("click", () => {
     if(currentNum != "" && previousNum != "") {
@@ -120,3 +122,23 @@ function addDecimal() {
         currentDisplayNumber.textContent = currentNum;
     }
 }
+
+function handleKeyPress(e) {
+    e.preventDefault();
+    if (e.key >= 0 && e.key <= 9) {
+        handleNumber(e.key);
+    }
+    if (e.key === "Enter" || e.key === "=" && currentNum != "" && previousNum != "") {
+        calculate();
+    }
+    if (e.key === "+" || e.key === "-" || e.key === "/") {
+        handleOperator(e.key);
+    }
+    if (e.key === "*") {
+        handleOperator("x");
+    }
+    if (e.key === ".") {
+        addDecimal();
+    }
+}
+
